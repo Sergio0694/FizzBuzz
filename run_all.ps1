@@ -93,11 +93,11 @@ function Invoke-FizzBuzz {
             & $buildCommand $buildCommandParameters $buildCommandParametersArray
 
             if($LASTEXITCODE -eq 0){
-                Write-Host "Executing $executeCommand $executeCommandParameters in $location"
+                Write-Host "Executing $executeCommand $executeCommandParameters $executeCommandParametersArray in $location"
 
                 $outputFilename = Join-Path $root -ChildPath "FizzBuzz.$nameShort.txt"
 
-                & $executeCommand $executeCommandParameters > $outputFilename
+                & $executeCommand $executeCommandParameters $executeCommandParametersArray > $outputFilename
 
                 if (-not($referenceHash -eq ((Get-FileHash $outputFilename).Hash))) {
                     Write-Host "Incorrect hash on output for $nameLong implementation. :("
@@ -119,6 +119,7 @@ function Invoke-FizzBuzzNoBuild {
         $location = "\src"
         , $command = ""
         , $commandParameters = ""
+        , $commandParametersArray = @()
         , $nameShort = ""
         , $nameLong = ""
         , $preExecute = ""
@@ -159,11 +160,11 @@ function Invoke-FizzBuzzNoBuild {
                 & $preExecute
             }
 
-            Write-Host "Executing $command $commandParameters in $location"
+            Write-Host "Executing $command $commandParameters $commandParametersArray in $location"
 
             $outputFilename = Join-Path $root -ChildPath "FizzBuzz.$nameShort.txt"
             
-            & $command $commandParameters > $outputFilename
+            & $command $commandParameters $commandParametersArray > $outputFilename
 
             if (-not($referenceHash -eq ((Get-FileHash $outputFilename).Hash))) {
                 Write-Host "Incorrect hash on output for $nameLong implementation. :("
@@ -209,6 +210,7 @@ $tests | ForEach-Object -Process {
     Invoke-FizzBuzzNoBuild -location $test.location `
         -command $test.command `
         -commandParameters $test.commandParameters `
+        -commandParametersArray $test.commandParametersArray `
         -nameShort $test.nameShort `
         -nameLong $test.nameLong `
         -preExecute $test.preExecute `
