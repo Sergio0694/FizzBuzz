@@ -1,0 +1,61 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build C#",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/src/CSharp/FizzBuzz.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Build Java",
+            "command": "javac",
+            "type": "process",
+            "args": [
+                "-cp",
+                "$env:JAVA_HOME",
+                "-d",
+                "bin",
+                "FizzBuzz.java"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/src/Java"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Execute JavaScript",
+            "command": "npm",
+            "type": "process",
+            "args": [
+                "start"
+            ]
+        },
+        {
+            "label": "Build C",
+            "type": "shell",
+            "windows": {
+                "command": "& .\\win_x64_build",
+                "options": {
+                    "cwd": "${workspaceFolder}/src/C"
+                }
+            },
+            "linux": {
+                "command": "./linux_build.sh",
+                "options": {
+                    "cwd": "${workspaceFolder}/src/C"
+                }
+            }
+        }
+    ]
+}

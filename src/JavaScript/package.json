@@ -1,0 +1,22 @@
+{
+  "name": "fizzbuzz",
+  "version": "1.0.0",
+  "description": "Write a program that prints the numbers from 1 to 100. But for multiples of three print “Fizz” instead of the number and for the multiples of five print “Buzz”. For numbers which are multiples of both three and five print “FizzBuzz”.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sharpninja/fizzbuzz.git"
+  },
+  "keywords": [
+    "FizzBuzz"
+  ],
+  "author": "The Sharp Ninja",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sharpninja/fizzbuzz/issues"
+  },
+  "homepage": "https://github.com/sharpninja/fizzbuzz#readme"
+}
