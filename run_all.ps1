@@ -31,14 +31,8 @@ $root = $directory.Path
 $referenceHash = (Get-FileHash $directory\FizzBuzz.txt).Hash;
 $failed = New-Object "System.Collections.Generic.List[String]"
 $passed = New-Object "System.Collections.Generic.List[String]"
-$wslCommand = "wsl"
-$vcCommand = "cl"
-$dotnetCommand = "dotnet"
-$javaCommand = "javac"
-$nodeCommand = "npm"
-$pythonCommand = "python"
 
-function Execute-FizzBuzz {
+function Invoke-FizzBuzz {
     param (
         $location = "\src"
         , $buildCommand = ""
@@ -56,17 +50,17 @@ function Execute-FizzBuzz {
     )
 
     process {
-        if($root -eq $null) { $root = "" }
-        if($location -eq $null) { $location = "" }
-        if($buildCommand -eq $null) { $buildCommand = "" }
-        if($buildCommandParameters -eq $null) { $buildCommandParameters = "" }
-        if($buildCommandParametersArray -eq $null) { $buildCommandParametersArray = @( "" ) }
-        if($executeCommand -eq $null) { $executeCommand = "" }
-        if($executeCommandParameters -eq $null) { $executeCommandParameters = "" }
-        if($executeCommandParametersArray -eq $null) { $executeCommandParametersArray = @( "" ) }
-        if($nameShort -eq $null) { $nameShort = "" }
-        if($nameLong -eq $null) { $nameLong = "" }
-        if($preBuild -eq $null) { $preBuild = "" }
+        if($null -eq $root) { $root = "" }
+        if($null -eq $location) { $location = "" }
+        if($null -eq $buildCommand) { $buildCommand = "" }
+        if($null -eq $buildCommandParameters) { $buildCommandParameters = "" }
+        if($null -eq $buildCommandParametersArray) { $buildCommandParametersArray = @( "" ) }
+        if($null -eq $executeCommand) { $executeCommand = "" }
+        if($null -eq $executeCommandParameters) { $executeCommandParameters = "" }
+        if($null -eq $executeCommandParametersArray) { $executeCommandParametersArray = @( "" ) }
+        if($null -eq $nameShort) { $nameShort = "" }
+        if($null -eq $nameLong) { $nameLong = "" }
+        if($null -eq $preBuild) { $preBuild = "" }
 
         Write-Host "Looking for [$nameShort]"
         Write-Debug $root
@@ -120,7 +114,7 @@ function Execute-FizzBuzz {
     }
 }
 
-function ExecuteNoBuild-FizzBuzz {
+function Invoke-FizzBuzzNoBuild {
     param (
         $location = "\src"
         , $command = ""
@@ -134,13 +128,13 @@ function ExecuteNoBuild-FizzBuzz {
     )
 
     process {
-        if($root -eq $null) { $root = "" }
-        if($location -eq $null) { $location = "" }
-        if($command -eq $null) { $command = "" }
-        if($commandParameters -eq $null) { $commandParameters = "" }
-        if($nameShort -eq $null) { $nameShort = "" }
-        if($nameLong -eq $null) { $nameLong = "" }
-        if($preExecute -eq $null) { $preExecute = "" }
+        if($null -eq $root) { $root = "" }
+        if($null -eq $location) { $location = "" }
+        if($null -eq $command) { $command = "" }
+        if($null -eq $commandParameters) { $commandParameters = "" }
+        if($null -eq $nameShort) { $nameShort = "" }
+        if($null -eq $nameLong) { $nameLong = "" }
+        if($null -eq $preExecute) { $preExecute = "" }
 
         Write-Host "Looking for [$nameShort]"
         Write-Debug $root
@@ -189,7 +183,7 @@ $tests | ForEach-Object -Process {
     Write-Host "Testing $_"
     $test = (Get-Content $_ | Out-String | ConvertFrom-Json)
 
-    Execute-FizzBuzz -location $test.location `
+    Invoke-FizzBuzz -location $test.location `
         -buildCommand $test.buildCommand `
         -buildCommandParameters $test.buildCommandParameters `
         -buildCommandParametersArray $test.buildCommandParametersArray `
@@ -212,7 +206,7 @@ $tests | ForEach-Object -Process {
     Write-Host "Testing $_"
     $test = (Get-Content $_ | Out-String | ConvertFrom-Json)
 
-    ExecuteNoBuild-FizzBuzz -location $test.location `
+    Invoke-FizzBuzzNoBuild -location $test.location `
         -command $test.command `
         -commandParameters $test.commandParameters `
         -nameShort $test.nameShort `
