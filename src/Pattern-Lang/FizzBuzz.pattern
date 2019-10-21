@@ -16,18 +16,27 @@ Application FizzBuzz
 
     Start
         Match Range(1, 100)
-            value => value % 5 == 0 And value % 3 == 0
-                |> _ => WriteLine("FizzBuzz")
-
-            value => value % 5 == 0 
-                |> _ => WriteLine("Buzz")
-
-            value => value % 3 == 0
-                |> _ => WriteLine("Fizz")
-
+            ByThreeAndFive |> _ => WriteLine("FizzBuzz")
+            ByFive |> _ => WriteLine("Buzz")
+            ByThree |> _ => WriteLine("Fizz")
             Some |> value => WriteLine(value)
             None |> Continue
             
     End Start
+
+    Private Method ByThreeAndFive Of Boolean
+        Parameter value Of Integer
+        Return value % 3 == 0 And value % 5 == 0
+    End ByThreeAndFive
+
+    Private Method ByFive Of Boolean
+        Parameter value Of Integer
+        Return value % 5 == 0
+    End ByThreeAndFive
+
+    Private Method ByThree Of Boolean
+        Parameter value Of Integer
+        Return value % 3 == 0
+    End ByThreeAndFive
 
 End FizzBuzz
