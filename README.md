@@ -41,13 +41,17 @@ There are now manifest files you can include in your submission so that your Fiz
     "location": "/src/C",
     "nameShort": "C",
     "nameLong": "C",
-    "buildCommand": "cl",
-    "buildCommandParameters": "fizzbuzz.c /Fe: bin\\windows_x64\\fizzbuzz.exe",
-    "executeCommand": "bin\\windows_x64\\fizzbuzz.exe",
+    "buildCommand": "wsl",
+    "buildCommandParameters": "./linux_build.sh",
+    "buildCommandParametersArray": [ ],
+    "executeCommand": "wsl",
     "executeCommandParameters": "",
-    "preBuild": "win_x64_build.cmd"
+    "executeCommandParameters": [ "./bin/linux/fizzbuzz" ],
+    "preBuild": ""
 }
 ```
+
+###### Parameters can be passed as a single string, an array of strings, or both simultaneously.
 
 #### test.json Fields
 
@@ -67,14 +71,17 @@ Place this file in the _first_ child directory of `/src` in your solution.
 ```json
 {
     "$schema": "../test_schema.json",
-    "location": "/src/Python",
-    "nameShort": "Python3",
-    "nameLong": "Python 3",
-    "command": "python",
-    "commandParameters": "fizzbuzz.py",
+    "location": "/src/Ruby",
+    "nameShort": "Ruby",
+    "nameLong": "Ruby",
+    "command": "wsl",
+    "commandParmaters": "",
+    "commandParametersArray": ["ruby", "./fizz_buzz.rb"],
     "preExecute": ""
 }
 ```
+
+###### Parameters can be passed as a single string, an array of strings, or both simultaneously.
 
 #### test_nobuild.json Fields
 
