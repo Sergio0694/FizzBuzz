@@ -11,6 +11,7 @@ The "Fizz-Buzz test" is an interview question designed to help filter out the 99
 * [C# w/Compiled Expression Trees](src/CSharpExpressions)
 * [Java](src/Java)
 * [JavaScript](src/JavaScript)
+* [Python 3](src/Python)
 
 ## Submit Your Solution!
 
