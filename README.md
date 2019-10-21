@@ -6,11 +6,15 @@ The "Fizz-Buzz test" is an interview question designed to help filter out the 99
 
 ## Solutions
 
+* [x64 ASM](src/ASM/x64)
 * [C](src/C)
 * [C#](src/CSharp)
 * [C# w/Compiled Expression Trees](src/CSharpExpressions)
+* [C# w/IL](src/CSharpIL)
+* [F#](src/FSharp)
 * [Java](src/Java)
 * [JavaScript](src/JavaScript)
+* [PowerShell](src/PowerShell)
 * [Python 3](src/Python)
 
 ## Submit Your Solution!
