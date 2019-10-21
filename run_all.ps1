@@ -43,8 +43,10 @@ function Execute-FizzBuzz {
         $location = "\src"
         , $buildCommand = ""
         , $buildCommandParameters = ""
+        , $buildCommandParametersArray = @()
         , $executeCommand = ""
         , $executeCommandParameters = ""
+        , $executeCommandParametersArray = @()
         , $nameShort = ""
         , $nameLong = ""
         , $preBuild = ""
@@ -58,8 +60,10 @@ function Execute-FizzBuzz {
         if($location -eq $null) { $location = "" }
         if($buildCommand -eq $null) { $buildCommand = "" }
         if($buildCommandParameters -eq $null) { $buildCommandParameters = "" }
+        if($buildCommandParametersArray -eq $null) { $buildCommandParametersArray = @( "" ) }
         if($executeCommand -eq $null) { $executeCommand = "" }
         if($executeCommandParameters -eq $null) { $executeCommandParameters = "" }
+        if($executeCommandParametersArray -eq $null) { $executeCommandParametersArray = @( "" ) }
         if($nameShort -eq $null) { $nameShort = "" }
         if($nameLong -eq $null) { $nameLong = "" }
         if($preBuild -eq $null) { $preBuild = "" }
@@ -91,7 +95,8 @@ function Execute-FizzBuzz {
                 & $preBuild
             }
 
-            & $buildCommand $buildCommandParameters
+            Write-Host "$buildCommand $buildCommandParameters $buildCommandParametersArray"
+            & $buildCommand $buildCommandParameters $buildCommandParametersArray
 
             if($LASTEXITCODE -eq 0){
                 Write-Host "Executing $executeCommand $executeCommandParameters in $location"
@@ -184,14 +189,16 @@ $tests | ForEach-Object -Process {
     Write-Host "Testing $_"
     $test = (Get-Content $_ | Out-String | ConvertFrom-Json)
 
-    Execute-FizzBuzz -location $test.location ?? "" `
-        -buildCommand $test.buildCommand ?? ""  `
-        -buildCommandParameters $test.buildCommandParameters ?? "" `
-        -executeCommand $test.executeCommand ?? "" `
-        -executeCommandParameters $test.executeCommandParameters ?? "" `
-        -nameShort $test.nameShort ?? "" `
-        -nameLong $test.nameLong ?? "" `
-        -preBuild $test.preBuild ?? "" `
+    Execute-FizzBuzz -location $test.location `
+        -buildCommand $test.buildCommand `
+        -buildCommandParameters $test.buildCommandParameters `
+        -buildCommandParametersArray $test.buildCommandParametersArray `
+        -executeCommand $test.executeCommand `
+        -executeCommandParameters $test.executeCommandParameters `
+        -executeCommandParametersArray $test.executeCommandParametersArray `
+        -nameShort $test.nameShort `
+        -nameLong $test.nameLong `
+        -preBuild $test.preBuild `
         -fail $failed `
         -pass $passed `
         -targets $tgts
@@ -205,12 +212,12 @@ $tests | ForEach-Object -Process {
     Write-Host "Testing $_"
     $test = (Get-Content $_ | Out-String | ConvertFrom-Json)
 
-    ExecuteNoBuild-FizzBuzz -location $test.location ?? "" `
-        -command $test.command ?? "" `
-        -commandParameters $test.commandParameters ?? "" `
-        -nameShort $test.nameShort ?? "" `
-        -nameLong $test.nameLong ?? "" `
-        -preExecute $test.preExecute ?? "" `
+    ExecuteNoBuild-FizzBuzz -location $test.location `
+        -command $test.command `
+        -commandParameters $test.commandParameters `
+        -nameShort $test.nameShort `
+        -nameLong $test.nameLong `
+        -preExecute $test.preExecute `
         -fail $failed `
         -pass $passed `
         -targets $tgts

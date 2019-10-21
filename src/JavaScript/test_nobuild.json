@@ -3,7 +3,7 @@
     "location": "/src/JavaScript",
     "nameShort": "JavaScript",
     "nameLong": "JavaScript",
-    "command": "npm",
-    "commandParameters": "start",
+    "command": "node",
+    "commandParameters": "index.js",
     "preExecute": ""
 }

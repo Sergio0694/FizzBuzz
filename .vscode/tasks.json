@@ -6,7 +6,8 @@
             "command": "powershell",
             "type": "process",
             "args": [
-                "${workspaceFolder}/run_all.ps1"
+                "${workspaceFolder}/run_all.ps1",
+                "*"
             ],
             "group": {
                 "kind": "build",

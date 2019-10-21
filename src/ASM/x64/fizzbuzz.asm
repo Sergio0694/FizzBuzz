@@ -54,7 +54,7 @@ endLoop:
    mov rdi, newLine
    call printf
    add rbx, 1
-   cmp rbx, 100
+   cmp rbx, 101
    jne loop
 
    mov rdi, 0
