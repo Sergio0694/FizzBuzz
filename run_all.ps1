@@ -43,6 +43,26 @@ else {
 
 Write-Host ""
 Write-Host "---------------------------------"
+Write-Host "Building C# (Expressions)"
+
+Set-Location $directory\src\CSharpExpressions
+& dotnet build
+
+if ($LASTEXITCODE -eq 0) {
+    Write-Host "Executing C#"
+    & dotnet run --no-build > $directory\FizzBuzz.CSharpExpressions.txt
+
+    if (-not($referenceHash -eq ((Get-FileHash $directory\FizzBuzz.CSharpExpressions.txt).Hash))) {
+        Write-Host "Incorrect hash on output for C# with Expressions implementation. :("
+        $failed += "$directory\FizzBuzz.CSharpExpressions.txt"
+    }
+}
+else {
+    Write-Host "Error compiling C# with Expressions program."
+}
+
+Write-Host ""
+Write-Host "---------------------------------"
 Write-Host "Building Java"
 
 Set-Location $directory\src\Java
