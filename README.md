@@ -28,3 +28,60 @@ Create a Pull Request with your solution.  Be sure to specify the following in y
 
 Be practical or creative, but limit your solution to a **single source file**, please.
 
+## NEW
+
+There are now manifest files you can include in your submission so that your FizzBuzz solution will be run from the main script.
+
+### test.json For Compiled Solutions
+
+```json
+{
+    "$schema": "../test_schema.json",
+    "location": "/src/C",
+    "nameShort": "C",
+    "nameLong": "C",
+    "buildCommand": "cl",
+    "buildCommandParameters": "fizzbuzz.c /Fe: bin\\windows_x64\\fizzbuzz.exe",
+    "executeCommand": "bin\\windows_x64\\fizzbuzz.exe",
+    "executeCommandParameters": "",
+    "preBuild": "win_x64_build.cmd"
+}
+```
+
+#### test.json Fields
+
+* __location__ - Relative path from the root of the project to the working directory of your solution.
+* __nameShort__ - A (very) short name for your solution with no spaces.
+* __nameLong__ - A descriptive name for your solution, which may have spaces.
+* __buildCommand__ - The command to execute in the shell to build your solution.
+* __buildCommandParameters__ - The parameters to pass to your __buildCommand__.
+* __executeCommand__ - The command to execute in the shell to run your solution.
+* __executeCommandParameters__ - The parameters to pass to your __executeCommand__.
+* __preBuild__ - A command to execute before building your solution.
+
+Place this file in the _first_ child directory of `/src` in your solution.
+
+### test_nobuild.json For Scripted Solutions
+
+```json
+{
+    "$schema": "../test_schema.json",
+    "location": "/src/Python",
+    "nameShort": "Python3",
+    "nameLong": "Python 3",
+    "command": "python",
+    "commandParameters": "fizzbuzz.py",
+    "preExecute": ""
+}
+```
+
+#### test_nobuild.json Fields
+
+* __location__ - Relative path from the root of the project to the working directory of your solution.
+* __nameShort__ - A (very) short name for your solution with no spaces.
+* __nameLong__ - A descriptive name for your solution, which may have spaces.
+* __command__ - The command to execute in the shell to run your solution.
+* __commandParameters__ - The parameters to pass to your __executeCommand__.
+* __preExecute__ - A command to execute before running your solution.
+
+Place this file in the _first_ child directory of `/src` in your solution.
