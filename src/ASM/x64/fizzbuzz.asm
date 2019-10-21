@@ -1,7 +1,3 @@
-sys_exit        equ     60
-sys_write       equ     1
-stdout          equ     1
-
 global _start
 extern printf
 extern exit
