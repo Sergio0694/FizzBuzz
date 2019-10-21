@@ -14,7 +14,7 @@ The "Fizz-Buzz test" is an interview question designed to help filter out the 99
 * [F#](src/FSharp)
 * [Java](src/Java)
 * [JavaScript](src/JavaScript)
-* [Powershell](src/Powershell)
+* [PowerShell](src/PowerShell)
 * [Python 3](src/Python)
 
 ## Submit Your Solution!
