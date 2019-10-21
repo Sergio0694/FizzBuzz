@@ -1,0 +1,11 @@
+{
+    "$schema": "../test_schema.json",
+    "location": "/src/C",
+    "nameShort": "C",
+    "nameLong": "C",
+    "buildCommand": "cl",
+    "buildCommandParameters": "fizzbuzz.c /Fe: bin\\windows_x64\\fizzbuzz.exe",
+    "executeCommand": "bin\\windows_x64\\fizzbuzz.exe",
+    "executeCommandParameters": "",
+    "preBuild": "win_x64_build.cmd"
+}

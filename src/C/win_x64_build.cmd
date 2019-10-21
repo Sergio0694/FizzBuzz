@@ -4,4 +4,4 @@ echo off
 md bin
 md bin\windows_x64
 
-cl fizzbuzz.c /Fe: bin\windows_x64\fizzbuzz.exe
+REM cl fizzbuzz.c /Fe: bin\windows_x64\fizzbuzz.exe
