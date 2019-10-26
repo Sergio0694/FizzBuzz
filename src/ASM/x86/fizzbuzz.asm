@@ -19,11 +19,12 @@ loop:
    xor edx, edx
    mov ecx, 5
    div ecx
+
+   pop eax
+   cmp eax, 0
    
    push edx
-
-   pop edx
-   cmp edx, 0
+   
    jne checkBuzz
 
 printFizz:

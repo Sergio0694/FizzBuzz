@@ -13,6 +13,8 @@ if($Targets -ne $null) {
 if($tgts.Count -eq 0) {
     Write-Debug "Populating tgts"
     $tgts.Add("x64")
+    $tgts.Add("x86")
+    $tgts.Add("armf")
     $tgts.Add("C")
     $tgts.Add("CSharp")
     $tgts.Add("CSharpExpressions")
