@@ -5,7 +5,7 @@
 # "Fizz" instead of the number and for the multiples of five print "Buzz". For numbers which 
 # are multiples of both three and five print "FizzBuzz"."
 
-        .global _start
+.global _start
         .func _start
 
 _start:
