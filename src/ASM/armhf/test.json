@@ -1,8 +1,8 @@
 {
     "$schema": "../test_schema.json",
-    "location": "/src/ASM/armf",
-    "nameShort": "armf",
-    "nameLong": "armf Assembly",
+    "location": "/src/ASM/armhf",
+    "nameShort": "armhf",
+    "nameLong": "armhf Assembly",
     "buildCommand": "wsl",
     "buildCommandParameters": "./linux_build.sh",
     "executeCommand": "wsl",

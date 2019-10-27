@@ -14,7 +14,7 @@ if($tgts.Count -eq 0) {
     Write-Debug "Populating tgts"
     $tgts.Add("x64")
     $tgts.Add("x86")
-    $tgts.Add("armf")
+    $tgts.Add("armhf")
     $tgts.Add("C")
     $tgts.Add("CSharp")
     $tgts.Add("CSharpExpressions")
