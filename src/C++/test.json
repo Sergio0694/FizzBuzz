@@ -1,0 +1,11 @@
+{
+    "$schema": "../test_schema.json",
+    "location": "/src/C++",
+    "nameShort": "C++",
+    "nameLong": "C++",
+    "buildCommand": "wsl",
+    "buildCommandParameters": "./linux_build.sh",
+    "executeCommand": "wsl",
+    "executeCommandParameters": "./bin/linux/fizzbuzz",
+    "preBuild": ""
+}
