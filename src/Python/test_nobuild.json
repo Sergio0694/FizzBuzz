@@ -1,0 +1,9 @@
+{
+    "$schema": "../test_schema.json",
+    "location": "/src/Python",
+    "nameShort": "Python3",
+    "nameLong": "Python 3",
+    "command": "python",
+    "commandParameters": "fizzbuzz.py",
+    "preExecute": ""
+}

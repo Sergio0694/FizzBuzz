@@ -1,0 +1,11 @@
+{
+    "$schema": "../test_schema.json",
+    "location": "/src/CSharpExpressions",
+    "nameShort": "CSharpExpressions",
+    "nameLong": "CSharp Compiled Expressions",
+    "buildCommand": "dotnet",
+    "buildCommandParameters": "build",
+    "executeCommand": "dotnet",
+    "executeCommandParameters": "run",
+    "preBuild": ""
+}

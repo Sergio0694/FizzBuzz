@@ -1,0 +1,12 @@
+{
+    "$schema": "../test_schema.json",
+    "location": "src/Java",
+    "nameShort": "Java",
+    "nameLong": "Java",
+    "buildCommand": "javac",
+    "buildCommandParameters": "",
+    "buildCommandParametersArray": [ "-d", ".\\", "FizzBuzz.java" ],
+    "executeCommand": "java",
+    "executeCommandParameters": "ninja.thesharp.FizzBuzz",
+    "preBuild": ""
+}

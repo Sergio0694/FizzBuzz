@@ -1,0 +1,9 @@
+{
+    "$schema": "../test_schema.json",
+    "location": "/src/PowerShell",
+    "nameShort": "PowerShell",
+    "nameLong": "PowerShell",
+    "command": "powershell",
+    "commandParameters": "./fizzbuzz.ps1",
+    "preExecute": ""
+}

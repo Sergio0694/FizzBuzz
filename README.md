@@ -6,11 +6,17 @@ The "Fizz-Buzz test" is an interview question designed to help filter out the 99
 
 ## Solutions
 
+* [x64 ASM](src/ASM/x64)
 * [C](src/C)
 * [C#](src/CSharp)
 * [C# w/Compiled Expression Trees](src/CSharpExpressions)
+* [C# w/IL](src/CSharpIL)
+* [F#](src/FSharp)
 * [Java](src/Java)
 * [JavaScript](src/JavaScript)
+* [PowerShell](src/PowerShell)
+* [Python 3](src/Python)
+* [Ruby](src/Ruby)
 
 ## Submit Your Solution!
 
@@ -23,3 +29,67 @@ Create a Pull Request with your solution.  Be sure to specify the following in y
 
 Be practical or creative, but limit your solution to a **single source file**, please.
 
+## NEW
+
+There are now manifest files you can include in your submission so that your FizzBuzz solution will be run from the main script.
+
+### test.json For Compiled Solutions
+
+```json
+{
+    "$schema": "../test_schema.json",
+    "location": "/src/C",
+    "nameShort": "C",
+    "nameLong": "C",
+    "buildCommand": "wsl",
+    "buildCommandParameters": "./linux_build.sh",
+    "buildCommandParametersArray": [ ],
+    "executeCommand": "wsl",
+    "executeCommandParameters": "",
+    "executeCommandParameters": [ "./bin/linux/fizzbuzz" ],
+    "preBuild": ""
+}
+```
+
+###### Parameters can be passed as a single string, an array of strings, or both simultaneously.
+
+#### test.json Fields
+
+* __location__ - Relative path from the root of the project to the working directory of your solution.
+* __nameShort__ - A (very) short name for your solution with no spaces.
+* __nameLong__ - A descriptive name for your solution, which may have spaces.
+* __buildCommand__ - The command to execute in the shell to build your solution.
+* __buildCommandParameters__ - The parameters to pass to your __buildCommand__.
+* __executeCommand__ - The command to execute in the shell to run your solution.
+* __executeCommandParameters__ - The parameters to pass to your __executeCommand__.
+* __preBuild__ - A command to execute before building your solution.
+
+Place this file in the _first_ child directory of `/src` in your solution.
+
+### test_nobuild.json For Scripted Solutions
+
+```json
+{
+    "$schema": "../test_schema.json",
+    "location": "/src/Ruby",
+    "nameShort": "Ruby",
+    "nameLong": "Ruby",
+    "command": "wsl",
+    "commandParmaters": "",
+    "commandParametersArray": ["ruby", "./fizz_buzz.rb"],
+    "preExecute": ""
+}
+```
+
+###### Parameters can be passed as a single string, an array of strings, or both simultaneously.
+
+#### test_nobuild.json Fields
+
+* __location__ - Relative path from the root of the project to the working directory of your solution.
+* __nameShort__ - A (very) short name for your solution with no spaces.
+* __nameLong__ - A descriptive name for your solution, which may have spaces.
+* __command__ - The command to execute in the shell to run your solution.
+* __commandParameters__ - The parameters to pass to your __executeCommand__.
+* __preExecute__ - A command to execute before running your solution.
+
+Place this file in the _first_ child directory of `/src` in your solution.

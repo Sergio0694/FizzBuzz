@@ -1,0 +1,11 @@
+{
+    "$schema": "../test_schema.json",
+    "location": "/src/ASM/armf",
+    "nameShort": "armf",
+    "nameLong": "armf Assembly",
+    "buildCommand": "wsl",
+    "buildCommandParameters": "./linux_build.sh",
+    "executeCommand": "wsl",
+    "executeCommandParameters": "./run_fizzbuzz.sh",
+    "preBuild": ""
+}

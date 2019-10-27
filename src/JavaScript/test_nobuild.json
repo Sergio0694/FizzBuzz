@@ -1,0 +1,9 @@
+{
+    "$schema": "../test_schema.json",
+    "location": "/src/JavaScript",
+    "nameShort": "JavaScript",
+    "nameLong": "JavaScript",
+    "command": "node",
+    "commandParameters": "index.js",
+    "preExecute": ""
+}

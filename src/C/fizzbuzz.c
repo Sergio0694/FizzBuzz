@@ -14,7 +14,7 @@ int main()
 
     for (int i = 1; i <= 100; ++i)
     {
-        itoa(i, snum, 10);
+        snprintf(snum, 3, "%d", i);
         printf("%s\n", i % 3 == 0
                    ? i % 5 == 0
                          ? "FizzBuzz"

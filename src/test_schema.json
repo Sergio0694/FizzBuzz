@@ -1,0 +1,41 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "FizzBuzzTest",
+    "description": "Build and Run Configuration for a FizzBuzz Test",
+    "type": "object",
+    "properties": {
+        "location": {
+            "description": "Where the source is located relative to the current directory.",
+            "type": "string"
+        },
+        "nameShort": {
+            "description": "Name of the FizzBuzz Test",
+            "type": "string"
+        },
+        "nameLong": {
+            "description": "Description of the FizzBuzz Test",
+            "type": "string"
+        },
+        "buildCommand": {
+            "description": "Command line command to execute to Build the FizzBuzz Test.",
+            "type": "string"
+        },
+        "buildCommandParameters": {
+            "description": "Parameters to pass for building the FizzBuzz Test.",
+            "type": "string"
+        },
+        "executeCommand": {
+            "description": "Command line command to execute to Execute the FizzBuzz Test.",
+            "type": "string"
+        },
+        "executeCommandParameters": {
+            "description": "Parameters to pass for executing the FizzBuzz Test.",
+            "type": "string"
+        },
+        "preExecute": {
+            "description": "Command line command to execute to before Building the FizzBuzz Test.",
+            "type": "string"
+        }
+    },
+    "required": ["id", "name", "price"]
+}

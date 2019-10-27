@@ -1,0 +1,11 @@
+{
+    "$schema": "../test_schema.json",
+    "location": "/src/FSharp",
+    "nameShort": "FSharp",
+    "nameLong": "FSharp",
+    "buildCommand": "dotnet",
+    "buildCommandParameters": "build",
+    "executeCommand": "dotnet",
+    "executeCommandParameters": "run",
+    "preBuild": ""
+}
