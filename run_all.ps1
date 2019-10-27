@@ -16,6 +16,7 @@ if($tgts.Count -eq 0) {
     $tgts.Add("x86")
     $tgts.Add("armhf")
     $tgts.Add("C")
+    $tgts.Add("C++")
     $tgts.Add("CSharp")
     $tgts.Add("CSharpExpressions")
     $tgts.Add("CSharpIL")
