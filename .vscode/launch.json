@@ -1,43 +1,52 @@
 {
-   // Use IntelliSense to find out which attributes exist for C# debugging
-   // Use hover for the description of the existing attributes
-   // For further information visit https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md
-   "version": "0.2.0",
-   "configurations": [
-    {
-        "name": ".NET Core Launch (console)",
-        "type": "coreclr",
-        "request": "launch",
-        "preLaunchTask": "Build C#",
-        "program": "${workspaceFolder}/src/CSharp/bin/Debug/netcoreapp3.0/FizzBuzz.exe",
-        "args": [],
-        "cwd": "${workspaceFolder}/src/CSharp",
-        "console": "internalConsole",
-        "stopAtEntry": false
-    },
-    {
-        "name": "C Launch (console)",
-        "preLaunchTask": "Build C",
-        "program": "fizzbuzz.exe",
-        "args": [],
-        "cwd": "${workspaceFolder}/src/C/bin/windows_x64/",
-        "console": "internalConsole",
-        "stopAtEntry": false
-    },
-    {
-        "name": "Java Launch (console)",
-        "type": "java",
-        "request": "launch",
-        "preLaunchTask": "Build Java",
-        "mainClass": "ninja.thesharp.FizzBuzz"
-    },
-    {
-        "name": "JavaScript Launch (console)",
-        "program": "npm",
-        "args": ["start"],
-        "cwd": "${workspaceFolder}/src/CSharp",
-        "console": "internalConsole",
-        "stopAtEntry": false
-    }
-]
+    // Use IntelliSense to find out which attributes exist for C# debugging
+    // Use hover for the description of the existing attributes
+    // For further information visit https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": ".NET Core Launch (console)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "Build C#",
+            "program": "${workspaceFolder}/src/CSharp/bin/Debug/netcoreapp3.0/FizzBuzz.exe",
+            "args": [],
+            "cwd": "${workspaceFolder}/src/CSharp",
+            "console": "internalConsole",
+            "stopAtEntry": false
+        },
+        {
+            "name": "C Launch (console)",
+            "preLaunchTask": "Build C",
+            "program": "fizzbuzz.exe",
+            "args": [],
+            "cwd": "${workspaceFolder}/src/C/bin/windows_x64/",
+            "console": "internalConsole",
+            "stopAtEntry": false
+        },
+        {
+            "name": "Java Launch (console)",
+            "type": "java",
+            "request": "launch",
+            "preLaunchTask": "Build Java",
+            "mainClass": "ninja.thesharp.FizzBuzz"
+        },
+        {
+            "name": "JavaScript Launch (console)",
+            "program": "npm",
+            "args": [
+                "start"
+            ],
+            "cwd": "${workspaceFolder}/src/CSharp",
+            "console": "internalConsole",
+            "stopAtEntry": false
+        }
+    ]
 }
