@@ -25,6 +25,7 @@ if($tgts.Count -eq 0) {
     $tgts.Add("Java")
     $tgts.Add("JavaScript")
     $tgts.Add("Python3")
+    $tgts.Add("Ruby")
 }
 
 $directory = Get-Location
