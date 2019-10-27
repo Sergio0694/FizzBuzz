@@ -20,6 +20,7 @@ if($tgts.Count -eq 0) {
     $tgts.Add("CSharp")
     $tgts.Add("CSharpExpressions")
     $tgts.Add("CSharpIL")
+    $tgts.Add("VisualBasic")
     $tgts.Add("FSharp")
     $tgts.Add("Java")
     $tgts.Add("JavaScript")
