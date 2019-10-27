@@ -26,7 +26,7 @@ Application FizzBuzz
 
     Private Method ByThreeAndFive Of Boolean
         Parameter value Of Integer
-        Return value % 3 == 0 And value % 5 == 0
+        Return ByThree(value) And ByFive(value)
     End ByThreeAndFive
 
     Private Method ByFive Of Boolean
