@@ -6,17 +6,22 @@ The "Fizz-Buzz test" is an interview question designed to help filter out the 99
 
 ## Solutions
 
+* [ARMHF ASM](src/ASM/armhf)
 * [x64 ASM](src/ASM/x64)
+* [x86 ASM](src/ASM/x86)
 * [C](src/C)
+* [C++](src/C++)
 * [C#](src/CSharp)
 * [C# w/Compiled Expression Trees](src/CSharpExpressions)
 * [C# w/IL](src/CSharpIL)
 * [F#](src/FSharp)
 * [Java](src/Java)
 * [JavaScript](src/JavaScript)
+* [Pattern-Lang](src/Pattern-Lang) <sup>1</sup>
 * [PowerShell](src/PowerShell)
 * [Python 3](src/Python)
 * [Ruby](src/Ruby)
+* [Visual Basic](src/VisualBasic)
 
 ## Submit Your Solution!
 
@@ -93,3 +98,7 @@ Place this file in the _first_ child directory of `/src` in your solution.
 * __preExecute__ - A command to execute before running your solution.
 
 Place this file in the _first_ child directory of `/src` in your solution.
+
+---
+
+<sup>1</sup> - Pattern-Lang is still concept only/
