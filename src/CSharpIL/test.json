@@ -1,0 +1,11 @@
+{
+    "$schema": "../test_schema.json",
+    "location": "/src/CSharpIL",
+    "nameShort": "CSharpIL",
+    "nameLong": "CSharp IL",
+    "buildCommand": "dotnet",
+    "buildCommandParameters": "build",
+    "executeCommand": "dotnet",
+    "executeCommandParameters": "run",
+    "preBuild": ""
+} 

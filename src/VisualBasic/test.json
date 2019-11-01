@@ -1,0 +1,11 @@
+{
+    "$schema": "../test_schema.json",
+    "location": "/src/VisualBasic",
+    "nameShort": "VisualBasic",
+    "nameLong": "Visual Basic",
+    "buildCommand": "dotnet",
+    "buildCommandParameters": "build",
+    "executeCommand": "dotnet",
+    "executeCommandParameters": "run",
+    "preBuild": ""
+}

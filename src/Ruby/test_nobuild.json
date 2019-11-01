@@ -1,0 +1,9 @@
+{
+    "$schema": "../test_schema.json",
+    "location": "/src/Ruby",
+    "nameShort": "Ruby",
+    "nameLong": "Ruby",
+    "command": "wsl",
+    "commandParametersArray": ["ruby", "./fizz_buzz.rb"],
+    "preExecute": ""
+}
